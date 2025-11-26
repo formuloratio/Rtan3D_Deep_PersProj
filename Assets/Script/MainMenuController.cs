@@ -1,18 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject statusOpen;
+    public GameObject inventoryOpen;
+    
+    public void BackMainMenu()
     {
-        
+        statusOpen.SetActive(false);
+        inventoryOpen.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenStatus()
     {
-        
+        statusOpen.SetActive(true);
+        inventoryOpen.SetActive(false);
+    }
+
+    public void OpenInventory()
+    {
+        inventoryOpen.SetActive(true);
+        statusOpen.SetActive(false);
     }
 }
